@@ -7,9 +7,10 @@ export async function GET() {
   
         await connectDB();
         const allItems = await ItemModel.find();
-console.log("全件取得")
+
         return NextResponse.json({message: "アイテム読み取り成功(ALL)", allItems : allItems});
     } catch {
         return NextResponse.json({message: "アイテム読み取り失敗(ALL)"});
     }
 }
+export const revalidata = 0;
